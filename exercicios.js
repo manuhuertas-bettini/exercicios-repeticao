@@ -259,3 +259,215 @@ btnEstoque.addEventListener("click", function () {
         alert("Quantidade de estoque inválida.");
     }
 });
+// Nível Básico
+// 16. CONTAGEM DE 1 A 10
+let btnContagem = document.getElementById("btnContagem");
+btnContagem.addEventListener("click", function () {
+    let resultado = "";
+    for (let i = 1; i <= 10; i++) {
+        resultado += i + "\n";
+    }
+    alert("Contagem de 1 a 10:\n\n" + resultado);
+});
+// 17. TABUADA
+let numeroTabuada = document.getElementById("numeroTabuada");
+let btnTabuada = document.getElementById("btnTabuada");
+btnTabuada.addEventListener("click", function () {
+    let numero = Number(numeroTabuada.value);
+    let resultado = "";
+    for (let i = 1; i <= 10; i++) {
+        resultado += numero + " x " + i + " = " + (numero * i) + "\n";
+    }
+    alert("Tabuada do " + numero + ":\n\n" + resultado);
+});
+// 18. SOMA DOS PRIMEIROS N NÚMEROS
+let numeroN = document.getElementById("numeroN");
+let btnSomaN = document.getElementById("btnSomaN");
+btnSomaN.addEventListener("click", function () {
+    let n = Number(numeroN.value);
+    let soma = 0;
+    for (let i = 1; i <= n; i++) {
+        soma += i;
+    }
+    alert("A soma de 1 até " + n + " é: " + soma);
+});
+// 19. NÚMEROS PARES DE 1 A 50
+let btnPares = document.getElementById("btnPares");
+btnPares.addEventListener("click", function () {
+    let resultado = "";
+    for (let i = 1; i <= 50; i++) {
+        if (i % 2 === 0) {
+            resultado += i + "\n";
+        }
+    }
+    alert("Números pares:\n\n" + resultado);
+});
+// 20. JOGO DE ADIVINHAÇÃO
+let btnAdivinhacao = document.getElementById("btnAdivinhacao");
+btnAdivinhacao.addEventListener("click", function () {
+    let numeroCorreto = Math.floor(Math.random() * 100) + 1;
+    let tentativa = Number(
+        prompt("Adivinhe um número de 1 a 100:")
+    );
+    while (tentativa !== numeroCorreto) {
+        if (tentativa > numeroCorreto) {
+            tentativa = Number(
+                prompt("O número correto é MENOR. Tente novamente:")
+            );
+        } else {
+            tentativa = Number(
+                prompt("O número correto é MAIOR. Tente novamente:")
+            );
+        }
+    }
+    alert("Parabéns! Você acertou! 🎉\nO número era " + numeroCorreto);
+});
+// 21. CONTAGEM REGRESSIVA
+let numeroRegressivo = document.getElementById("numeroRegressivo");
+let btnRegressiva = document.getElementById("btnRegressiva");
+btnRegressiva.addEventListener("click", function () {
+    let numero = Number(numeroRegressivo.value);
+    let resultado = "";
+    while (numero >= 0) {
+        resultado += numero + "\n";
+        numero--;
+    }
+    alert("Contagem regressiva:\n\n" + resultado);
+});
+// 22. VALIDAÇÃO DE SENHA
+let btnSenha = document.getElementById("btnSenha");
+btnSenha.addEventListener("click", function () {
+    let senhaCorreta = "1234";
+    let senha = prompt("Digite a senha:");
+    while (senha !== senhaCorreta) {
+        senha = prompt("Senha incorreta!\nDigite novamente:");
+    }
+    alert("Senha correta! Acesso permitido. ✅");
+});
+// 23. SOMA ATÉ PARAR
+let btnSomaParar = document.getElementById("btnSomaParar");
+btnSomaParar.addEventListener("click", function () {
+    let soma = 0;
+    let numero = Number(
+        prompt("Digite um número.\nDigite 0 para parar:")
+    );
+    while (numero !== 0) {
+        soma += numero;
+        numero = Number(
+            prompt("Digite outro número.\nDigite 0 para parar:")
+        );
+    }
+    alert("O total da soma é: " + soma);
+});
+// 24. MÉDIA DE 3 VALORES
+let btnMedia = document.getElementById("btnMedia");
+btnMedia.addEventListener("click", function () {
+    let soma = 0;
+    for (let i = 1; i <= 3; i++) {
+        let numero = Number(
+            prompt("Digite o " + i + "º número:")
+        );
+        soma += numero;
+    }
+    let media = soma / 3;
+    alert("A média dos 3 números é: " + media.toFixed(2));
+});
+// 25. SOMA DOS DÍGITOS
+let numeroDigitos = document.getElementById("numeroDigitos");
+let btnDigitos = document.getElementById("btnDigitos");
+btnDigitos.addEventListener("click", function () {
+    let numero = Number(numeroDigitos.value);
+    let soma = 0;
+    while (numero > 0) {
+        let digito = numero % 10;
+        soma += digito;
+        numero = Math.floor(numero / 10);
+    }
+    alert("A soma dos dígitos é: " + soma);
+});
+// 26. TABUADA DINÂMICA
+let numeroTabuadaDinamica = document.getElementById("numeroTabuadaDinamica");
+let btnTabuadaDinamica = document.getElementById("btnTabuadaDinamica");
+btnTabuadaDinamica.addEventListener("click", function () {
+    let numero = Number(numeroTabuadaDinamica.value);
+    let resultado = "";
+    let i = 1;
+    while (i <= 10) {
+        resultado += numero + " x " + i + " = " + (numero * i) + "\n";
+        i++;
+    }
+    alert("Tabuada do " + numero + ":\n\n" + resultado);
+});
+// 27. INVERTER UM NÚMERO
+let numeroInverter = document.getElementById("numeroInverter");
+let btnInverter = document.getElementById("btnInverter");
+btnInverter.addEventListener("click", function () {
+    let numero = Number(numeroInverter.value);
+    let invertido = 0;
+    while (numero > 0) {
+        let digito = numero % 10;
+        invertido = invertido * 10 + digito;
+        numero = Math.floor(numero / 10);
+    }
+    alert("Número invertido: " + invertido);
+});
+// 28. MAIOR NÚMERO DIGITADO
+let btnMaiorNumero = document.getElementById("btnMaiorNumero");
+btnMaiorNumero.addEventListener("click", function () {
+    let maior = Number(
+        prompt("Digite o 1º número:")
+    );
+    for (let i = 2; i <= 5; i++) {
+        let numero = Number(
+            prompt("Digite o " + i + "º número:")
+        );
+        if (numero > maior) {
+            maior = numero;
+        }
+    }
+    alert("O maior número digitado foi: " + maior);
+});
+// 29. LISTA DE NOMES
+let btnNomes = document.getElementById("btnNomes");
+btnNomes.addEventListener("click", function () {
+    let nomes = [
+        "Ana",
+        "João",
+        "Maria",
+        "Carlos",
+        "Manuella"
+    ];
+    let resultado = "";
+    nomes.forEach(function(nome) {
+        resultado += nome + "\n";
+    });
+    alert("Lista de nomes:\n\n" + resultado);
+});
+// 30. SISTEMA DE PEDIDOS
+let btnPedidos = document.getElementById("btnPedidos");
+btnPedidos.addEventListener("click", function () {
+    let produtos = [
+        "Pizza",
+        "Hambúrguer",
+        "Refrigerante"
+    ];
+    let lista = "";
+    produtos.forEach(function(produto, indice) {
+        lista += (indice + 1) + " - " + produto + "\n";
+    });
+    let escolha = Number(
+        prompt("Escolha um produto:\n\n" + lista)
+    );
+    while (escolha < 1 || escolha > produtos.length) {
+        escolha = Number(
+            prompt(
+                "Opção inválida!\n\nEscolha um produto:\n\n" + lista
+            )
+        );
+    }
+    alert(
+        "Pedido realizado! ✅\n\n" +
+        "Produto escolhido: " +
+        produtos[escolha - 1]
+    );
+});
